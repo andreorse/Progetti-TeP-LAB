@@ -35,5 +35,9 @@ class CVisita {
     int    orarioFine;
 }
 
-
+class CVisite {
+	CVisita[] elencoVisite;
+	CPaziente[] elencoPazienti;
+	int numEl;
+}
 @enduml
