@@ -12,11 +12,15 @@ class CDate {
     int numGiorni;    
     String toString();
 }
+class CDates {
+    CDate[] dates;
+}
 class CMedico {
     String specializzazione;
     CDate  dataLaurea;  
     int    orarioInizioVisite;
     int    orarioFineVisite;
+    CVisitePazienti visite
 }
 class CPaziente {
     String nome;
@@ -34,10 +38,19 @@ class CVisita {
     int    orarioInizio;
     int    orarioFine;
 }
-
 class CVisite {
-	CVisita[] elencoVisite;
-	CPaziente[] elencoPazienti;
-	int numEl;
+    CVisita[] visite
 }
+class CVisitePaziente {
+    CVisite visite
+    CPaziente paziente
+}
+class CVisitePazienti {
+    CVisitePaziente[] visitePazienti
+}
+CMedico *-- "1..1" CVisitePazienti
+CVisitePazienti *-- "1..1" CVisite
+CVisitePazienti *-- "1..1" CPaziente
+CVisite *-- "0..*" CVisita
+
 @enduml
